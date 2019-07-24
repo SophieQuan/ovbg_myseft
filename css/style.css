@@ -235,7 +235,7 @@ section #map {
 
 #contentTextBox {
 	width: 100%;
-	height: auto;
+	min-height: 100%;
 	margin-top: 2vh;
 	background: rgba(0, 0, 0, 0.05);
 	border-radius: 1vh;
