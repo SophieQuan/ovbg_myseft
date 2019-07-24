@@ -249,7 +249,7 @@ section #map {
 	border-radius: 1vh;
 	width: 100%;
 	height: auto;
-	display: block;
+	display: grid;
 }
 
 .bigImage {
