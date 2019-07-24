@@ -6,8 +6,11 @@
 	margin: 0;
 }
 
-body {
+body, html {
 	background: #f7f2db;
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
 
 :root {
