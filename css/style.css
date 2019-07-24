@@ -246,27 +246,29 @@ section #map {
 
 #modalContent {
 	position: relative;
-	/*opacity: 0;*/
 	border-radius: 1vh;
 	width: 100%;
 	height: auto;
-	display: block;
+	display: grid;
+    	padding: 0 1vw 1vw 1vw  ;
 }
 
 .bigImage {
-	width: 80%;
+	width: 76.5%;
 	height: auto;
 	position: absolute;
 }
 
 .smImage {
-	width: 17.7%;
+	width: 18.3%;
 	height: auto;
-	background-color: yellow;
 	display: flex;
 	flex-direction: column;
 	margin-left: 82%;
-	margin-bottom: 2%;
+	margin-bottom: 1vw;
+}
+.smImage:active{
+   border: 2px solid #f7f2db;
 }
 
 .bigImage,
