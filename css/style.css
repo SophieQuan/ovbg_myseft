@@ -218,7 +218,7 @@ section #map {
 #contentImageBox {
 	width: 100%;
 	height: auto;
-	display: inline-flex;
+	display: block;
 	justify-content: space-between;
 	align-content: center;
 	background: rgba(0, 0, 0, 0.05);
@@ -390,6 +390,7 @@ input:checked+label {
 #expandedImg,
 #thumbnail {
 	float: left;
+	display: block;
 }
 
 #expandedImg {
