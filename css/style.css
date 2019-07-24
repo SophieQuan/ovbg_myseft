@@ -216,12 +216,13 @@ section #map {
 	padding: 2vh;
 	padding-bottom: 2vh;
 	overflow: scroll; 
+	display: block;
 }
 
 #contentImageBox {
 	width: 100%;
 	height: auto;
-	display: inline-block;
+	display: block;
 	justify-content: space-between;
 	align-content: center;
 	background: rgba(0, 0, 0, 0.05);
@@ -366,7 +367,7 @@ input:checked+label {
 	border-radius: 1vh;
 	width: 100%;
 	height: auto;
-	display: inline-block;
+	display: block;
 }
 
 .bigImage {
@@ -383,7 +384,6 @@ input:checked+label {
 	flex-direction: column;
 	margin-left: 82%;
 	margin-bottom: 2%;
-	transition: animation ease-in-out 2s normal;
 }
 
 .bigImage,
