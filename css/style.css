@@ -224,7 +224,7 @@ section #map {
 	background: rgba(0, 0, 0, 0.05);
 	padding: 2vh;
 	border-radius: 1vh;
-	position: relative;
+	position:static;
 }
 
 #contentImageBox .galleryImage {
