@@ -178,7 +178,7 @@ function openInfoPanel() {
     // animating the panel while opening
     if (infoPanelState === 0) {
         TweenMax.fromTo("#infoPanel", 1, {
-            bottom: '-100vh',
+            bottom: '-50vh',
         }, {
             delay: 0.5,
             bottom: '7vh',
