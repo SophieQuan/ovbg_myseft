@@ -216,20 +216,21 @@ section #map {
 }
 
 #contentImageBox {
-	
-    background: rgba(0, 0, 0, 0.05);
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	background: rgba(0, 0, 0, 0.05);
 	padding: 2vh;
 	border-radius: 1vh;
-    justify-content: space-between;
 }
 
 #contentImageBox .galleryImage {
 	width: 23%;
-	height: auto;
 	border-radius: 1vh;
 	/* border: 2px solid #ebebeb; */
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-    
 }
 
 #contentTextBox {
