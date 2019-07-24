@@ -325,8 +325,7 @@ footer img {
 }
 
 label {
-	display: flex;
-	flex-direction: row;
+	display:block;
 	padding: 10px 20px;
 	margin-bottom: 2vh;
 	font-size: 3vh;
