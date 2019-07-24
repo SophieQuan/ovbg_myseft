@@ -366,7 +366,7 @@ input:checked+label {
 	border-radius: 1vh;
 	width: 100%;
 	height: auto;
-	display: grid;
+	display: inline-block;
 }
 
 .bigImage {
@@ -379,7 +379,7 @@ input:checked+label {
 	width: 17.7%;
 	height: auto;
 	background-color: yellow;
-	display: flex;
+	display: block;
 	flex-direction: column;
 	margin-left: 82%;
 	margin-bottom: 2%;
