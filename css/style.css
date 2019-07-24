@@ -218,7 +218,7 @@ section #map {
 #contentImageBox {
 	width: 100%;
 	height: auto;
-	display: inline-block;
+	display: flex;
 	justify-content: space-between;
 	align-content: center;
 	background: rgba(0, 0, 0, 0.05);
