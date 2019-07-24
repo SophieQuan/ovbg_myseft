@@ -220,11 +220,9 @@ section #map {
 	height: auto;
 	display: grid;
 	justify-content: space-between;
-	align-content: center;
 	background: rgba(0, 0, 0, 0.05);
 	padding: 2vh;
 	border-radius: 1vh;
-	position:static;
 }
 
 #contentImageBox .galleryImage {
