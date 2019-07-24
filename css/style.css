@@ -216,7 +216,7 @@ section #map {
 	padding: 2vh;
 	padding-bottom: 2vh;
 	overflow: scroll; 
-	display: block;
+	display: inline-block;
 }
 
 #contentImageBox {
@@ -325,7 +325,8 @@ footer img {
 }
 
 label {
-	display:block;
+	display: flex;
+	flex-direction: row;
 	padding: 10px 20px;
 	margin-bottom: 2vh;
 	font-size: 3vh;
