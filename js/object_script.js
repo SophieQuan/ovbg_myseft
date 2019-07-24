@@ -299,7 +299,7 @@ function showSlides(n) {
 function closeImgGallery() {
     expandedImg.style.display = "none";
     thumbnail.style.display = "none";
-    contentImg.style.display = "block";
+    contentImg.style.display = "flex";
 }
 
 // END IMAGE GALLERY SCRIPT ----------  
