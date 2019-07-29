@@ -78,7 +78,7 @@ main {
 
 header {
 	position: fixed;
-	top: 5vh;
+	top: 8vh;
 	left: 12.5vw;
 	transform: translateX(-3.5vw);
 	height: 7vh;
@@ -102,7 +102,146 @@ header {
 	width: auto;
 	height: 100%;
 }
+.switchToggle{
+    width: 60%;
+    height: auto;
+    align-self: center;
+    grid-area: switchToggle;
+    margin-left: 1.5vw;
+    
+}
+.pathfinder {
+    width: 90%;
+    height: 17vh;
+    background-color: var(--paths);
+    display: grid;
+    grid-template-areas:  "switchToggle start go-btn"
+                        "switchToggle end go-btn";
+    grid-template-columns: 8% 75% 17%;
+    position: absolute;
+    top: 9vh;
+    left: 5vw;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1.5px solid #383838;
+    font-family: "ButtonFont";
+}
 
+.pathfinder ul li {
+    list-style: none;
+}
+
+.path-start-select, .path-end-select {
+    width: 48vw;
+    height: 5.5vh;
+    border-radius: 1vh;
+    border: 1.5px solid #707070;
+    font-size: 2.7vh;
+    padding: 0.25rem 0.5rem ;
+    margin: 0rem 0.75rem;
+}
+
+.path-start-select li {
+    background: #F7F2DB;
+    border-bottom-left-radius: 1.5px solid #383838;
+    border-bottom-right-radius: 1.5px solid #383838;
+    border-right: 1.5px solid #383838;
+    border-left: 1.5px solid #383838;
+    margin: 0 -0.5rem 0 -0.5rem;
+    padding: 0 0.75rem 0.25rem 0.75rem;
+}
+
+.path-start-select li:first-of-type {
+    border: none;
+}
+
+.path-start-select li:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 1.5px solid #383838;
+}
+
+.path-end-select li {
+    background-color: #F7F2DB;
+    border-left: 1.5px solid #383838;
+    border-right: 1.5px solid #383838;
+    margin: 0rem -0.5rem 0 -0.5rem;
+    padding: 0 0.75rem 0.25rem 0.75rem;
+}
+
+.path-end-select li:first-of-type {
+    border: none;
+}
+
+.path-end-select li:last-of-type {
+    background: #F7F2DB;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.placeholder-end{
+    color: #707070;
+}
+.endPoint, .startPoint {
+    height: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.startPoint {
+    grid-area: start;
+    margin: 1.15rem 0 0.25rem 0;
+}
+
+.label {
+    width: 12vw;
+    font-size: 18px;
+}
+
+.endPoint {
+    grid-area: end;
+}
+.placeholder-end{
+    font-family: "ButtonFont";
+}
+
+
+.go-btn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;    
+    grid-area: go-btn;
+    width: 100%;
+    height: 100%;
+    background-color: #FAF7E9;
+    border-bottom-right-radius: 5px;
+    border-left: 1.5px solid #383838;
+    font-size: 20px;
+    cursor: pointer;
+    grid-template-areas:"goButtonIcon"
+                        "button";
+    
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+#goButtonIcon{
+    width: 40%;
+    height:auto;
+    align-self: center;
+    padding-bottom: 0.25rem
+}
+button{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-size: 20px;
+    align-self: center;
+    font-family: "ButtonFont"
+}
 .destination-menu {
 	width: 100%;
 	height: 30rem;
@@ -123,9 +262,10 @@ header {
     display: grid;
     grid-template-areas: "logo placeholder";
     grid-template-columns: 20% 80%;
-	text-align: center;
-	font-size: 16px;
+	text-align: right;
+	font-size: 15px;
 	font-family: "ButtonFont";
+    padding: 0rem 0.5rem;
 }
 
 .destination-select h2 {
@@ -405,45 +545,34 @@ label h4 {
 	display: none;
 	position: relative;
 }
-/* portrait tablets and large phones */
-@media only screen and (min-width: 600px) {
-    .destination-select, footer{
-		display: none !important;
-	}
-   
-    section{
-        margin: 0 auto;
-        width: 100%;
-    }
-}
-/* STYLES FOR LARGE DISPLAYS - landscape tablets, destop*/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+/* STYLES FOR LARGE DISPLAYS */
 
 @media only screen and (min-width: 769px) {
-	.destination-select, footer {
-		display: none !important;
+	.destination-select {
+		display: none;
 	}
- 
+
 	section {
 		position: absolute;
 		top: 0;
 		width: 100vw;
 		height: 100vh;
 		overflow: scroll;
-        
 	}
 
 	#svgMapObj {
 		position: relative;
+		left: 30vw;
 		width: auto;
 		height: 100%;
 		/* overflow: scroll; */
-        margin: 0 auto;
 	}
 
 	#svgMap {
 		width: auto;
 		height: 100%;
-        
 	}
 
 	#infoPanel {
@@ -579,11 +708,4 @@ label h4 {
 		height: 10vh;
 		width: 30vw;
 	}
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    #svgMapObj{
-        margin: 0 auto;
-        width: 100%;
-    }
 }
