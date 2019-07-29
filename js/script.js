@@ -1,5 +1,5 @@
 // Put everything inside an onload to ensure that everything has loaded in before any code is executed
-window.onload = function() {
+
 	/* VARIABLE DECLARATIONS */
 	// List of items in the drop down (order matters)
 	// CAUTION: ORDER CHANGE
@@ -675,4 +675,4 @@ window.onload = function() {
 
 	// END IMAGE GALLERY SCRIPT ----------
 	// }
-};
+
