@@ -95,6 +95,7 @@ header {
 	width: auto;
 	height: 100%;
 	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 
 #svgMap {
@@ -107,24 +108,35 @@ header {
 	height: 30rem;
 }
 
-
 .destination-select {
-	width: 80vw;
+	width: 95vw;
 	background: var(--paths);
-	border-radius: 1.5vh;
-	border: 2px solid var(--concrete-path);
+	border-radius: 1vh;
+	border: 1.5px solid var(--concrete-path);
 	z-index: 9000;
 	position: absolute;
-	top: 5vh;
-	left: 10vw;
+	top: 2.5%;
+	left: 2.5vw;
 }
 
-.destination-select li {
-	list-style: none;
+.destination-select  {
+    display: grid;
+    grid-template-areas: "logo placeholder";
+    grid-template-columns: 20% 80%;
 	text-align: center;
-	padding: 1vh;
-	font-size: 3vh;
+	font-size: 16px;
 	font-family: "ButtonFont";
+}
+
+.destination-select h2 {
+    padding: 0.25rem 0;
+    grid-area: placeholder;
+}
+
+.topbar-logo {
+    padding: 0.25rem 0;
+    grid-area: logo;
+    border-right: 1.5px solid #383838;
 }
 
 .hidden {
@@ -136,6 +148,7 @@ section {
 	width: 100%;
 	height: 92%;
 	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 
 /* #mapBox {
@@ -202,8 +215,9 @@ section #map {
 }
 
 #closeButton {
-	height: 60%;
+	height: 40%;
 	width: auto;
+	filter:  drop-shadow(1px 1px 1px #383838);
 }
 
 #contentBox {
@@ -218,7 +232,7 @@ section #map {
 #contentImageBox {
 	width: 100%;
 	height: auto;
-	display: flex;
+	display: block;
 	justify-content: space-between;
 	align-content: center;
 	background: rgba(0, 0, 0, 0.05);
@@ -227,10 +241,9 @@ section #map {
 }
 
 #contentImageBox .galleryImage {
-	width: 23%;
+	width: 24%;
 	height: auto;
 	border-radius: 1vh;
-	/* border: 2px solid #ebebeb; */
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -242,55 +255,7 @@ section #map {
 	border-radius: 1vh;
 	margin-bottom: 5vh;
 }
-/*gallery Images style--------------------*/
-#modalContent {
-	position: relative;
-	/*opacity: 0;*/
-	border-radius: 1vh;
-	width: 100%;
-	height: auto;
-	display: grid;
-}
 
-.bigImage {
-	width: 80%;
-	height: auto;
-	position: absolute;
-}
-
-.smImage {
-	width: 17.7%;
-	height: auto;
-	background-color: yellow;
-	display: flex;
-	flex-direction: column;
-	margin-left: 82%;
-	margin-bottom: 2%;
-}
-.smImage:active{
-   border: 2px solid #f7f2db;
-}
-
-.bigImage,
-.smImage {
-	border-radius: 1vh;
-}
-
-#expandedImg,
-#thumbnail {
-	float: left;
-}
-
-#expandedImg {
-	width: 80%;
-	display: none;
-}
-
-#thumbnail {
-	width: 100%;
-	display: none;
-	position: relative;
-}
 #contentTextBox p {
 	color: #383838;
 	font-size: 3vh;
@@ -387,50 +352,98 @@ label h4 {
 	margin-left: 1vw;
 }
 
-label:hover {
-	cursor: pointer;
-}
-
-input:checked+label {
-	background-color: rgba(0, 0, 0, 0.1);
-	transition: 0.3s ease-in-out;
-
-}
-
 #tabIcon {
 	width: auto;
 	height: 2.5vh;
 	margin-right: 1vw;
 }
 
+/*gallery Images style--------------------*/
 
+#modalContent {
+	position: relative;
+	border-radius: 1vh;
+	width: 100%;
+	height: auto;
+	display: block;
+}
 
-/* STYLES FOR LARGE DISPLAYS */
+.bigImage {
+	width: 80%;
+	height: auto;
+	position: absolute;
+}
+
+.smImage {
+	width: 17.7%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	margin-left: 82%;
+	margin-bottom: 2%;
+}
+.smImage:active {
+	border: 1px solid #f7f2db;
+}
+.bigImage,
+.smImage {
+	border-radius: 1vh;
+}
+
+#expandedImg,
+#thumbnail {
+	float: left;
+}
+
+#expandedImg {
+	width: 80%;
+	display: none;
+}
+
+#thumbnail {
+	width: 100%;
+	display: none;
+	position: relative;
+}
+/* portrait tablets and large phones */
+@media only screen and (min-width: 600px) {
+    .destination-select, footer{
+		display: none !important;
+	}
+   
+    section{
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+/* STYLES FOR LARGE DISPLAYS - landscape tablets, destop*/
 
 @media only screen and (min-width: 769px) {
-	.destination-select {
-		display: none;
+	.destination-select, footer {
+		display: none !important;
 	}
-
+ 
 	section {
 		position: absolute;
 		top: 0;
 		width: 100vw;
 		height: 100vh;
 		overflow: scroll;
+        
 	}
 
 	#svgMapObj {
 		position: relative;
-		left: 30vw;
 		width: auto;
 		height: 100%;
 		/* overflow: scroll; */
+        margin: 0 auto;
 	}
 
 	#svgMap {
 		width: auto;
 		height: 100%;
+        
 	}
 
 	#infoPanel {
@@ -480,8 +493,9 @@ input:checked+label {
 	}
 
 	#closeButton {
-		height: 60%;
+		height: 40%;
 		width: auto;
+		filter:  drop-shadow(1px 1px 1px #383838);
 	}
 
 	#contentBox {
@@ -565,4 +579,11 @@ input:checked+label {
 		height: 10vh;
 		width: 30vw;
 	}
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #svgMapObj{
+        margin: 0 auto;
+        width: 100%;
+    }
 }
