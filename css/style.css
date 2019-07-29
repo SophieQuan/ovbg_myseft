@@ -129,71 +129,35 @@ header {
 
 .pathfinder ul li {
     list-style: none;
+    background-color: #f7f2db;
+    padding: 0 1rem;
 }
 
 .path-start-select, .path-end-select {
-    width: 48vw;
-    height: 5.5vh;
+    width: 80%;
     border-radius: 1vh;
     border: 1.5px solid #707070;
     font-size: 2.7vh;
-    padding: 0.25rem 0.5rem ;
-    margin: 0rem 0.75rem;
+    background-color: #f7f2db;
+    
+    padding: 1px 2px;
 }
 
-.path-start-select li {
-    background: #F7F2DB;
-    border-bottom-left-radius: 1.5px solid #707070;
-    border-bottom-right-radius: 1.5px solid #707070;
-    border-right: 1.5px solid #707070;
-    border-left: 1.5px solid #707070;
-    margin: 0 -0.55rem 0 -0.55rem;
-    padding: 0 0.75rem 0.25rem 0.75rem;
-}
-
-.path-start-select li:first-of-type {
-    border: none;
-}
-
-.path-start-select li:last-of-type {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom: 1.5px solid #707070;
-}
-
-.path-end-select li {
-    background-color: #F7F2DB;
-    border-left: 1.5px solid #707070;
-    border-right: 1.5px solid #707070;
-    margin: 0rem -0.55rem 0 -0.55rem;
-    padding: 0 0.75rem 0.25rem 0.75rem;
-}
-
-.path-end-select li:first-of-type {
-    border: none;
-}
-
-.path-end-select li:last-of-type {
-    background: #F7F2DB;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom: 1.5px solid #707070;
-}
 .placeholder-end{
     color: #707070;
 }
 .endPoint, .startPoint {
-    height: 1rem;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    width: 100%;
-    
+    justify-content: center;
+    height:4.5vh;
+    width: 95%;
 }
 
 .startPoint {
     grid-area: start;
-    margin: 1.15rem 0 0.25rem 0;
+    margin: 1rem 0;
+  
 }
 
 .label {
@@ -231,7 +195,6 @@ header {
 }
 #goButtonIcon{
     width: 40%;
-    height:auto;
     align-self: center;
     padding-bottom: 0.25rem
 }
@@ -243,10 +206,7 @@ button{
     align-self: center;
     font-family: "ButtonFont"
 }
-.destination-menu {
-	width: 100%;
-	height: 30rem;
-}
+
 
 .destination-select {
 	width: 95vw;
@@ -284,6 +244,7 @@ button{
     align-content: center;
     align-self: center;
 }
+
 
 .hidden {
 	display: none;
