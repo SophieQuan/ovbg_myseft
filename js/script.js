@@ -14,16 +14,16 @@ window.onload = function() {
 		'Memory Garden',
 	];
 
-  // Constants for the dropdown
-  const TOP_BAR = document.getElementById('destination-menu'); // Initial top bar menu
-  const PATH_FINDER = document.querySelector('.pathfinder');  // secondary path finder menu to display when top bar is clicked
-	const DROP_DOWN_START = document.querySelector('.path-start-select'); // Select the drop down
-  const DROP_DOWN_ITEM_START = document.querySelectorAll('.path-start-select li'); // Create array of li items in drop down list
-  const DROP_DOWN_END = document.querySelector('.path-end-select'); // Select the drop down
-	const DROP_DOWN_ITEM_END = document.querySelectorAll('.path-end-select li'); // Create array of li items in drop down list
-	const MAP_OBJ = document.getElementById('svgMapObj'); // Target object element holding SVG of map
-  const MAP_SVG = MAP_OBJ.contentDocument.getElementById('svgMap'); // Get the SVG document inside the Object tag
-  const GO_BTN = document.querySelector('.go-btn'); // go button inside the path finder menu
+	// Constants for the dropdown
+    const TOP_BAR = document.getElementById('destination-menu'); // Initial top bar menu
+    const PATH_FINDER = document.querySelector('.pathfinder');  // secondary path finder menu to display when top bar is clicked
+    const DROP_DOWN_START = document.querySelector('.path-start-select'); // Select the drop down
+    const DROP_DOWN_ITEM_START = document.querySelectorAll('.path-start-select li'); // Create array of li items in drop down list
+    const DROP_DOWN_END = document.querySelector('.path-end-select'); // Select the drop down
+    const DROP_DOWN_ITEM_END = document.querySelectorAll('.path-end-select li'); // Create array of li items in drop down list
+    const MAP_OBJ = document.getElementById('svgMapObj'); // Target object element holding SVG of map
+    const MAP_SVG = MAP_OBJ.contentDocument.getElementById('svgMap'); // Get the SVG document inside the Object tag
+    const GO_BTN = document.querySelector('.go-btn'); // go button inside the path finder menu
 
 	// Constants to access the tabs
 	const TABS = document.querySelectorAll('.tab');
@@ -342,9 +342,6 @@ window.onload = function() {
     pathZoomIn(destination);
     PATH_FINDER.classList.add('hidden');
   });
-
-
-
 	/* OPENING AND CLOSING THE INFORMATION PANEL AND POPULATING IT WITH THE CONTENT */
 
 	// opening the info panel and populating it with content based on the id and tab determined from the URL
@@ -389,14 +386,7 @@ window.onload = function() {
 			// setting the content in the info panel
 			setTimeout(setContent, 350);
 			// opening the panel with new content
-      openInfoPanel();
-
-      let location = parseInt(id);
-      console.log(location + 1);
-      document.querySelector('.placeholder-start').textContent = LOCATIONS[location + 1];
-      console.log(currentLocation = LOCATIONS[parseInt(id) + 1]);
-      PATH_FINDER.classList.add('hidden');
-      TOP_BAR.classList.remove('hidden');
+			openInfoPanel();
 		};
 	}
 
