@@ -271,12 +271,14 @@ button{
 .destination-select h2 {
     padding: 0.25rem 0;
     grid-area: placeholder;
+    width: 100%;
 }
 
 .topbar-logo {
     padding: 0.25rem 0;
     grid-area: logo;
     border-right: 1.5px solid #383838;
+    width: 100%;
 }
 
 .hidden {
