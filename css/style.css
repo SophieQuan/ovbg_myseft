@@ -94,6 +94,7 @@ header {
     background-repeat: no-repeat;
     position: fixed;
     overflow: none;
+    background-size: cover;
 }
 #slashLogo{
     width: 70%;
@@ -267,19 +268,21 @@ button {
     text-align: right;
     font-size: 15px;
     font-family: "ButtonFont";
-    top: 0; left: 0; right: 0; bottom: 0;
+   
 }
 
 .destination-select h2 {
     padding-right: 2vh;
     grid-area: placeholder;
     width: 100%;
+    top: 0; left: 0; right: 0; bottom: 0;
 }
 
 .topbar-logo {
     grid-area: logo;
     width: 100%;
     border-right: 1.5px solid #383838;
+    top: 0; left: 0; right: 0; bottom: 0;
 }
 
 .hidden {
