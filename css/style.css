@@ -245,26 +245,25 @@ button {
 }
 
 .destination-select  {
-  display: grid;
-  grid-template-areas: "logo placeholder";
-  grid-template-columns: 20% 80%;
-	text-align: right;
-	font-size: 15px;
-	font-family: "ButtonFont";
-  padding: 0rem 0.5rem;
+    display: grid;
+    grid-template-areas: "logo placeholder";
+    grid-template-columns: 20% 80%;
+    text-align: right;
+    font-size: 15px;
+    font-family: "ButtonFont";
+    top: 0; left: 0; right: 0; bottom: 0;
 }
 
 .destination-select h2 {
-  padding: 0.25rem 0;
-  grid-area: placeholder;
-  width: 100%;
-  border-left: 1.5px solid #383838;
+    padding-right: 2vh;
+    grid-area: placeholder;
+    width: 100%;
 }
 
 .topbar-logo {
-	grid-area: logo;
-	width: 100%;
-	top: 0; left: 0; right: 0; bottom: 0;
+    grid-area: logo;
+    width: 100%;
+    border-right: 1.5px solid #383838;
 }
 
 .hidden {
