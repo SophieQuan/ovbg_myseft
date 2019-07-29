@@ -545,34 +545,45 @@ label h4 {
 	display: none;
 	position: relative;
 }
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
-/* STYLES FOR LARGE DISPLAYS */
+/* portrait tablets and large phones */
+@media only screen and (min-width: 600px) {
+    .destination-select, footer{
+		display: none !important;
+	}
+   
+    section{
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+/* STYLES FOR LARGE DISPLAYS - landscape tablets, destop*/
 
 @media only screen and (min-width: 769px) {
-	.destination-select {
-		display: none;
+	.destination-select, footer {
+		display: none !important;
 	}
-
+ 
 	section {
 		position: absolute;
 		top: 0;
 		width: 100vw;
 		height: 100vh;
 		overflow: scroll;
+        
 	}
 
 	#svgMapObj {
 		position: relative;
-		left: 30vw;
 		width: auto;
 		height: 100%;
 		/* overflow: scroll; */
+        margin: 0 auto;
 	}
 
 	#svgMap {
 		width: auto;
 		height: 100%;
+        
 	}
 
 	#infoPanel {
@@ -708,4 +719,11 @@ label h4 {
 		height: 10vh;
 		width: 30vw;
 	}
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #svgMapObj{
+        margin: 0 auto;
+        width: 100%;
+    }
 }
