@@ -751,4 +751,42 @@ window.onload = function () {
 
 	// END IMAGE GALLERY SCRIPT ----------
 	// }
+	
+	/*ANIMATE SLASH SCREEN*/   
+$("#splash").show();
+
+TweenMax.from("#splash", 0.5, {
+    delay: 0.25,
+    opacity: 0,
+    ease: Sine.easeIn,
+    
+});
+
+TweenMax.fromTo("#slashLogo",1,{
+    delay: 0.5,
+    scale: 0.8,
+    ease: Sine.easeIn,
+    opacity: 0, 
+    //x: -367
+},{ 
+    delay: 0.5,
+    scale: 1,
+    ease: Sine.easeOut,
+    opacity: 1,
+    //x:0
+});
+
+TweenMax.to("#splash", 0.25, {
+    delay: 3,
+    opacity: 0,
+    ease: Sine.easeOut,
+    onComplete: loadMap
+});
+
+// LANDING SCREEN ///////////////////////////////////////////
+
+function loadMap()
+{
+    $("#map_app").show();
+};
 };
