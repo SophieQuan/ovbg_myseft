@@ -121,52 +121,52 @@ header {
 }
 
 .switchToggle{
-  width: 45%;
-  height: auto;
-  align-self: center;
-  grid-area: switchToggle;
-  margin-left: 2vw;
-  position: relative;
+    width: 65%;
+    height: auto;
+    align-self: center;
+    grid-area: switchToggle;
+    margin-left: 1vw;
+    position: relative;
 }
 
 .pathfinder {
-  width: 90%;
-  height: 15vh;
-  background-color: var(--paths);
-  display: grid;
-  grid-template-areas:  "switchToggle startlabel start go-btn"
+    width: 90%;
+    height: 17vh;
+    background-color: var(--paths);
+    display: grid;
+    grid-template-areas:  "switchToggle startlabel start go-btn"
                         "switchToggle endlabel end go-btn";
-  grid-template-columns: 10% 10% 65% 15%;
-  position: absolute;
-  top: 8vh;
-  left: 5vw;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: 1.5px solid #383838;
-  font-family: "ButtonFont";
+    grid-template-columns: 7% 13% 65% 15%;
+    position: absolute;
+    top: 8vh;
+    left: 5vw;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1.5px solid #383838;
+    font-family: "ButtonFont";
 }
 
 .pathfinder ul li {
-  list-style: none;
-  background-color: #f7f2db;
-  padding: 0 0.5rem;
-  width: 100%;
+    list-style: none;
+    background-color: #f7f2db;
+    padding: 0 0.5rem;
+    width: 100%;
+     
 }
 
 .path-start-select, .path-end-select {
-  width: 80%;
-  height: auto;
-  border-radius: 1vh;
-  border: 1.5px solid #707070;
-  font-size: 2.7vh;
-  background-color: #f7f2db;
-  padding: 1px 2px;
+    width: 85%;
+    height: auto;
+    border-radius: 1vh;
+    border: 1.5px solid #707070;
+    font-size: 2.7vh;
+    background-color: #f7f2db;
+    padding: 4px 2px;
   /* position: relative; */
 }
-
 .placeholder-end{
-  color: #707070;
-  font-family: "ButtonFont";
+    color: #707070;
+    font-family: "ButtonFont";
 }
 
 .path-start-select {
@@ -176,77 +176,87 @@ header {
 
 .path-end-select {
   position: absolute;
-  top: -2.25vh;
+  top: -3.25vh;
 }
 
 .endPoint, .startPoint {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-self: center;
-  width: 100%;
-  position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    width: 100%;
+    position: absolute;
 }
 
 .startPoint {
-  grid-area: start;
-  margin-top: 1vh;
+    grid-area: start;
+    margin-top: 1vh;
 }
 
 .label {
-  width: 12vw;
-  font-size: 18px;
-  display: flex;
-    align-items: center;
-}
+    width: 12vw;
+    font-size: 20px;
+    position: absolute;
 
-.label-start {
-  grid-area: startlabel;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    height: 5vh;
+    width: 100%;
     
 }
 
+.label-start {
+    grid-area: startlabel;
+    top: 2vh;
+}
+
 .label-end {
-  grid-area: endlabel;
+    grid-area: endlabel;
+    top: 0.5vh
 }
 
 .endPoint {
-  grid-area: end;
+    grid-area: end;
+    
 }
 
 .go-btn {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  text-align: center;    
-  grid-area: go-btn;
-  width: 100%;
-  height: 100%;
-  background-color: #FAF7E9;
-  border-bottom-right-radius: 5px;
-  border-left: 1.5px solid #383838;
-  font-size: 20px;
-  cursor: pointer;
-  grid-template-areas:"goButtonIcon"
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;    
+    grid-area: go-btn;
+    width: 100%;
+    height: 100%;
+    background-color: #FAF7E9;
+    border-bottom-right-radius: 10px/**/;
+    border-left: 1.5px solid #383838;
+    border-bottom: 1px solid #383838;
+    font-size: 25px;
+    cursor: pointer;
+    grid-template-areas:"goButtonIcon"
                       "button";
-  
-  flex-direction: column;
-  align-items: flex-start;
+                      "button";
+
+    flex-direction: column;
+    align-items: flex-start;
   
 }
 #goButtonIcon {
-  width: 40%;
-  align-self: center;
-  padding-bottom: 0.25rem
+    width: 50%;
+    align-self: center;
+    padding-bottom: 0.25rem
 }
 
 button {
-  border: none;
-  background-color: inherit;
-  cursor: pointer;
-  font-size: 20px;
-  align-self: center;
-  font-family: "ButtonFont"
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-size: 20px;
+    align-self: center;
+    font-family: "ButtonFont"
 }
 
 .destination-select {
@@ -258,14 +268,14 @@ button {
     z-index: 9000;
     position: absolute;
     top: 2.5%;
-    left: 2.5vw;
+    left: 2.6%;
+    overflow: hidden;
 }
 
 .destination-select  {
-    display: grid;
+    /*display: grid;
     grid-template-areas: "logo placeholder";
-    grid-template-columns: 20% 80%;
-    text-align: right;
+    grid-template-columns: 20% 80%;*/
     font-size: 15px;
     font-family: "ButtonFont";
    
@@ -273,16 +283,21 @@ button {
 
 .destination-select h2 {
     padding-right: 2vh;
-    grid-area: placeholder;
-    width: 100%;
-    top: 0; left: 0; right: 0; bottom: 0;
+   /* grid-area: placeholder;*/
+    height: inherit;
+    align-items: center;
+    display: flex;
+    float: right;
 }
 
 .topbar-logo {
-    grid-area: logo;
-    width: 100%;
+   /* grid-area: logo;*/
+    width:20%;
+    height: inherit;
+    display: flex;
+    float: left;
+    align-items: center;
     border-right: 1.5px solid #383838;
-    top: 0; left: 0; right: 0; bottom: 0;
 }
 
 .hidden {
