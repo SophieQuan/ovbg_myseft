@@ -116,6 +116,7 @@ header {
 	border-bottom-right-radius: 10px;
 	border: 1px solid var(--concrete-path);
 	font-family: "ButtonFont";
+	z-index: 100000;
 }
 
 .pathfinder ul li {
@@ -178,7 +179,7 @@ header {
 	text-align: left;
 	height: 5vh;
 	width: 100%;
-	z-index: 100000;
+	
     
 }
 
