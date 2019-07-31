@@ -54,13 +54,6 @@ window.onload = function () {
 	const ABOUT_TEXT = document.querySelector('#about');
 	const DESTINATIONS = document.querySelectorAll('.menuItem');
 
-	// Image Gallery elements
-	const BIG_IMAGES = document.querySelectorAll('.bigImage');
-	const SMALL_IMAGES = document.querySelectorAll('.smImage');
-	const contentImg = document.getElementById('contentImageBox');
-	const expandedImg = document.getElementById('expandedImg');
-	const thumbnail = document.getElementById('thumbnail');
-
 	//SVG Navigation Paths
 	const peonyToBridgePath = MAP_SVG.querySelector('#peony_to_bridge');
 	const peonyToBikePath = MAP_SVG.querySelector('#peony_to_bike_path');
@@ -122,8 +115,6 @@ window.onload = function () {
       'images/temp_pic1.jpg',
       'images/temp_pic1.jpg',
     ],
-    bigImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
-    smImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
     paths: ['bike_to_peony', 'bike_to_waterfall', 'bike_to_bridge', 'bike_to_daylily', 'bike_to_memory'],
     featureZoomPoints: ['180%', 0.2, 1],
     pathZoomPoints: [
@@ -146,8 +137,6 @@ window.onload = function () {
       'images/temp_pic2.jpg',
       'images/temp_pic2.jpg',
     ],
-    bigImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
-    smImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
     /* DRAWING PATHS*/
     paths: [{
         0: 0
@@ -186,8 +175,6 @@ window.onload = function () {
       'images/temp_pic3.jpg',
       'images/temp_pic3.jpg',
     ],
-    bigImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
-    smImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
     paths: [
       'waterfall_to_peony',
       'waterfall_to_bike',
@@ -216,8 +203,6 @@ window.onload = function () {
       'images/temp_pic4.jpg',
       'images/temp_pic4.jpg',
     ],
-    bigImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
-    smImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
     paths: [
       'bridge_to_peony',
       'bridge_to_waterfall',
@@ -246,8 +231,6 @@ window.onload = function () {
       'images/temp_pic5.jpg',
       'images/temp_pic5.jpg',
     ],
-    bigImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
-    smImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
     paths: [
       'daylily_to_peony',
       'daylily_to_waterfall',
@@ -276,8 +259,6 @@ window.onload = function () {
       'images/temp_pic6.jpg',
       'images/temp_pic6.jpg',
     ],
-    bigImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
-    smImages: ['images/temp_pic1.jpg', 'images/temp_pic2.jpg', 'images/temp_pic3.jpg', 'images/temp_pic4.jpg'],
     paths: [
       'memory_to_peony',
       'memory_to_waterfall',
@@ -341,7 +322,7 @@ window.onload = function () {
 	// if anywhere in the map is clicked the dropdown will close
 	MAP_SVG.addEventListener('click', function(e) {
         //reset the place holder text to where to?
-        PLACE_HOLDER.innerHTML = "Where to?";
+        PLACE_HOLDER.textContent = "Where to?";
         
 		DROP_DOWN_ITEM_START.forEach(item => {
 			// toggle the hidden class on each item in the list (unhiding them)
@@ -378,7 +359,7 @@ window.onload = function () {
   
 	TOP_BAR.addEventListener('click', function() {
 		// change the text on place holder
-		PLACE_HOLDER.innerHTML = "Select Destination";
+		PLACE_HOLDER.textContent = "Select Destination";
 
 		PATH_FINDER.classList.toggle('hidden');
 
@@ -511,8 +492,6 @@ window.onload = function () {
 			TABS[i].style.backgroundColor = '';
 			TITLE_BAR.style.backgroundColor = '#383838';
 		}
-		// reset image gallery
-		closeImgGallery();
 	}
 
 	// function to set all the content inside the info panel
@@ -698,72 +677,7 @@ window.onload = function () {
 			height: mapHeight + '%',
 		});
 	}
-
-	/* EXPANDING THE IMAGE GALLERY */
-
-	// function expand the image gallery
-	function openModal() {
-		contentImg.style.display = 'none';
-
-		for (let i in BIG_IMAGES) {
-			BIG_IMAGES[i].src = parkFeature[id].bigImages[i];
-		}
-		for (let i in SMALL_IMAGES) {
-			SMALL_IMAGES[i].src = parkFeature[id].bigImages[i];
-		}
-
-		expandedImg.style.display = 'block';
-		thumbnail.style.display = 'block';
-
-		// animate the image content once expanded
-		TweenMax.from('#modalContent', 1, {
-			opacity: 0,
-		});
-	}
-	contentImg.addEventListener('click', openModal);
-
-	//set the slide index to loop through thumbnail
-	let slideIndex = 1;
-	showSlides(slideIndex);
-
-	// fuction identify the current image - n is the number of current image slide
-	function currentSlide(n) {
-		showSlides((slideIndex = n));
-	}
-
-	// function show the image slide
-	function showSlides(n) {
-		let i;
-		let slides = document.getElementsByClassName('bigImage');
-		let thumbnails = document.getElementsByClassName('smImage');
-		if (n > slides.length) {
-			slideIndex = 1;
-		}
-		if (n < 1) {
-			slideIndex = slides.length;
-		}
-		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = 'none';
-		}
-		for (i = 0; i < thumbnails.length; i++) {
-			thumbnails[i].className = thumbnails[i].className.replace(' active', '');
-		}
-
-		slides[slideIndex - 1].style.display = 'block';
-		// load the current image from the thumbnail
-		thumbnails[slideIndex - 1].className += ' active';
-	}
-
-	// function to reset image gallery
-	function closeImgGallery() {
-		expandedImg.style.display = 'none';
-		thumbnail.style.display = 'none';
-		contentImg.style.display = 'block';
-	}
-
-	// END IMAGE GALLERY SCRIPT ----------
-
-	/*ANIMATE SLASH SCREEN*/   
+ 
 	/*ANIMATE SLASH SCREEN*/   
 	    /*$("#splash").show();
 	    TweenMax.from("#splash", 0.5, {
