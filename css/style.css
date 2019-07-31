@@ -108,148 +108,9 @@ header {
 	height: 100%;
 }
 
-.switchToggle{
-	width: 55%;
-	height: auto;
-	align-self: center;
-	grid-area: switchToggle;
-	margin-left: 1vw;
-	position: relative;
-    top: 0.5vh
-}
-
-.pathfinder {
-	width: 90%;
-	height: 17vh;
-	background-color: var(--paths);
-	display: grid;
-	grid-template-areas:  "switchToggle startlabel start go-btn"
-			"switchToggle endlabel end go-btn";
-	grid-template-columns: 7% 13% 65% 15%;
-	position: absolute;
-	top: 8vh;
-	left: 5vw;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	border: 1px solid var(--concrete-path);
-	font-family: "ButtonFont";
-}
-
-.pathfinder ul li {
-	list-style: none;
-	background-color: var(--go-button);
-	padding: 0 0.5rem;
-	width: 100%;
-     
-}
-.pathfinder ul li:hover, .pathfinder ul li:focus {
-	  background-color: #e7e1c6;
-}
-.path-start-select, .path-end-select {
-	width: 85%;
-	height: auto;
-	border-radius: 1vh;
-	border: 1px solid var(--concrete-path);
-	font-size: 3vh;
-	background-color: var(--paths);
-	padding: 4px 2px;
-	/* position: relative; */
-}
-.placeholder-end{
-	color: var(--concrete-path);
-	font-family: "ButtonFont";
-}
-
-.path-start-select {
-	position: absolute;
-	top: -2.25vh;
-}
-
-.path-end-select {
-	position: absolute;
-	top: -3.25vh;
-}
-
-.endPoint, .startPoint {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-self: center;
-	width: 100%;
-	position: absolute;
-}
-
-.startPoint {
-	grid-area: start;
-	margin-top: 1vh;
-}
-
-.pathfinder .label {
-	width: 12vw;
-	font-size: 20px;
-	position: absolute;
-	display: flex;
-	align-items: center;
-	text-align: left;
-	height: 5vh;
-	width: 100%;
-    
-}
-
-.label-start {
-	grid-area: startlabel;
-	top: 2.7vh;
-}
-
-.label-end {
-	grid-area: endlabel;
-	top: 1vh;
-}
-
-.endPoint {
-	grid-area: end;
-    
-}
-
-.go-btn {
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	text-align: center;    
-	grid-area: go-btn;
-	width: 102%;
-    height: 100.5%;
-	background-color: var(--go-button);
-	border-bottom-right-radius: 10px;
-	border-left: 1px solid var(--concrete-path);
-	border-right: 1px solid var(--concrete-path);
-	border-bottom: 1px solid var(--concrete-path);
-	font-size: 25px;
-	cursor: pointer;
-	grid-template-areas:"goButtonIcon"
-		      "button";
-
-	flex-direction: column;
-	align-items: flex-start;
-}
-#goButtonIcon {
-	width: 50%;
-	align-self: center;
-	padding-bottom: 0.25rem;
-}
-
-button {
-	border: none;
-	background-color: inherit;
-	cursor: pointer;
-	font-size: 20px;
-	align-self: center;
-	font-family: "ButtonFont"
-}
 
 .destination-select {
-	width: 95vw;
+	width: 90vw;
 	height: 6vh;
 	background: var(--paths);
 	border-radius: 1vh;
@@ -257,14 +118,11 @@ button {
 	z-index: 9000;
 	position: absolute;
 	top: 2.5%;
-	left: 2.6%;
+	left: 2.5vh;
 	overflow: hidden;
 }
 
 .destination-select  {
-	/*display: grid;
-	grid-template-areas: "logo placeholder";
-	grid-template-columns: 20% 80%;*/
 	font-size: 15px;
 	font-family: "ButtonFont";
    
@@ -286,7 +144,98 @@ button {
 	display: flex;
 	float: left;
 	align-items: center;
-	border-right: 1px solid #383838;
+	border-right: 1px solid var(--concrete-path);
+}
+
+.pathfinder{
+    width: 85%;
+    height: 15vh;
+    position: absolute;
+    background-color: var(--paths);
+    border: 1px solid var(--concrete-path);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    top:8%;
+    left: 4vh;
+    display: flex;
+    font-family: 'ButtonFont';
+    font-size: 18px;
+    
+}
+.switchToggle{
+    width: 7%;
+    display: flex;
+}
+.switchToggle img{
+    width: 65%;
+    margin-left:1vh;
+}
+.pathfinder label{
+    width: 13%;
+    font-family: 'ButtonFont';
+    font-size: 20px;
+    margin-right: 3vh;
+}
+.input{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-self:baseline;
+    margin-top: 1vh;
+}
+.startPoint, .endPoint{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    padding: 1vh 0vw;
+    align-items:baseline;
+    margin: 0 auto;
+}
+.endPoint{
+    color: #707070;
+}
+.pathfinder ul{
+    list-style: none;
+    border: 1px solid var(--concrete-path);
+    padding: 0.5vh 1.5vw;
+    width: 90%;
+    border: 1px solid var(--map);
+    border-radius: 7px;
+    background-color: var(--go-button);
+    font-size: 18px;
+}
+
+.go-btn {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	text-align: center; 
+	width: 15%;
+	height: 100%;
+	background-color: var(--go-button);
+    border-bottom-right-radius: 1vh;
+    border: 1px solid var(--concrete-path);
+	font-size: 25px;
+	cursor: pointer;
+	flex-direction: column;
+	align-items: flex-start;
+	top: 1vh;
+  
+}
+#goButtonIcon {
+    display: flex;
+	width: 50%;
+	align-self: center;
+	padding-bottom: 0.25rem
+}
+
+button {
+    display: flex;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	align-self: center;
+	font-family: "ButtonFont"
 }
 
 .hidden {
@@ -466,8 +415,7 @@ footer img {
 	max-height: 75%;
 	max-width: 75%;
 }
-
-#contentTextBox h3 {
+h3 {
 	/*display: flex;
 	flex-direction: row;*/
 	padding: 10px 20px;
@@ -542,7 +490,10 @@ footer img {
 }
 /* portrait tablets and large phones */
 @media only screen and (min-width: 600px) {
-    
+    .destination-select, footer{
+		display: none !important;
+	}
+   
     section{
         margin: 0 auto;
         width: 100%;
@@ -676,7 +627,7 @@ footer img {
 		padding: 2vh 1.5vw;
 	}
 
-	h4 {
+	#contentTexBox h3 {
 		display: flex;
 		flex-direction: row;
 		padding: 10px 20px;
