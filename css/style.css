@@ -76,24 +76,7 @@ header {
 	border-radius: 3vh;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
-/*SPLASH SCREEN*/
-#splash{
-	background-image: url(../images/welcome_bg.jpg);
-	background-repeat: no-repeat;
-	position: fixed;
-	overflow: none;
-	background-size: cover;
-}
-#slashLogo{
-	width: 70%;
-	height: auto;
-	position: absolute;
-	top: 0;
-	bottom:0;
-	left: 0;
-	right:0;
-	margin: auto;
-}
+
 /* Dropdown and SVG styles */
 
 #svgMapObj {
@@ -115,7 +98,7 @@ header {
 	grid-area: switchToggle;
 	margin-left: 1vw;
 	position: relative;
-    top: 0.5vh
+    	top: 0.5vh
 }
 
 .pathfinder {
@@ -195,6 +178,7 @@ header {
 	text-align: left;
 	height: 5vh;
 	width: 100%;
+	z-index: 100000;
     
 }
 
