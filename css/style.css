@@ -100,7 +100,7 @@ header {
 	width: auto;
 	height: 100%;
 	overflow: scroll;
-	-webkit-overflow-scrolling: touch;
+	-webkit-overflow-scrolling: auto;
 }
 
 #svgMap {
