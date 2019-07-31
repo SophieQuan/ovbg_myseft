@@ -109,24 +109,29 @@ header {
 	height: 100%;
 }
 
-.switchToggle{
-	width: 55%;
-	height: auto;
-	align-self: center;
-	grid-area: switchToggle;
-	margin-left: 1vw;
-	position: relative;
-    top: 0.5vh
+.fromCircle, .toCircle{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
+.fromCircle{
+    background-color: var(--concrete-path);
+    border: 1px solid var(--concrete-path);
 }
 
+.toCircle{
+    background-color: #2381ff;
+    border: 1px solid var(--concrete-path);
+}
 .pathfinder {
 	width: 90%;
-	height: 17vh;
+	height: 14vh;
 	background-color: var(--paths);
-	display: grid;
-	grid-template-areas:  "switchToggle startlabel start go-btn"
-			"switchToggle endlabel end go-btn";
-	grid-template-columns: 7% 13% 65% 15%;
+	display: flex;
 	position: absolute;
 	top: 8vh;
 	left: 5vw;
@@ -134,93 +139,71 @@ header {
 	border-bottom-right-radius: 10px;
 	border: 1px solid var(--concrete-path);
     font-family: "ButtonFont";
-    z-index: 800;
+    font-size: 2.7vh;
+    z-index: 800; 
+    
 }
-
+.pathfinder ul{
+    background-color: var(--go-button);
+}
 .pathfinder ul li {
 	list-style: none;
-	background-color: var(--go-button);
+	font-size: 18px;
 	padding: 0 0.5rem;
-	width: 100%;
-     
+    
 }
 .pathfinder ul li:hover, .pathfinder ul li:focus {
 	  background-color: #e7e1c6;
 }
 .path-start-select, .path-end-select {
-	width: 85%;
-	height: auto;
 	border-radius: 1vh;
 	border: 1px solid var(--concrete-path);
 	font-size: 3vh;
 	background-color: var(--paths);
-	padding: 4px 2px;
-	/* position: relative; */
+	padding: 1.5px 2px;
+    width: 75%;
+    height: 100%;
+}
+.path-start-select{
+    margin-bottom: 1vh;
 }
 .placeholder-end{
 	color: var(--concrete-path);
 	font-family: "ButtonFont";
 }
 
-.path-start-select {
-	position: absolute;
-	top: -2.25vh;
+.input{
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin: 1vh;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: baseline;
+    vertical-align: middle;
+        
 }
-
-.path-end-select {
-	position: absolute;
-	top: -3.25vh;
-}
-
 .endPoint, .startPoint {
+    width: 100%;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-self: center;
-	width: 100%;
-	position: absolute;
+	flex-direction:row;
+    align-items: baseline;
 }
 
 .startPoint {
-	grid-area: start;
 	margin-top: 1vh;
 }
-
-.pathfinder .label {
-	width: 12vw;
-	font-size: 20px;
-	position: absolute;
-	display: flex;
-	align-items: center;
-	text-align: left;
-	height: 5vh;
-	width: 100%;
-    
+.label{
+    display: flex;
+    width: 20%;
 }
-
-.label-start {
-	grid-area: startlabel;
-	top: 2.7vh;
-}
-
-.label-end {
-	grid-area: endlabel;
-	top: 1vh;
-}
-
-.endPoint {
-	grid-area: end;
-}
-
 .go-btn {
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	text-align: center;    
-	grid-area: go-btn;
-	width: 102%;
-    height: 100.5%;
+	text-align: center;
+	width:15%;
+    height: 100%;
 	background-color: var(--go-button);
 	border-bottom-right-radius: 10px;
 	border-left: 1px solid var(--concrete-path);
@@ -228,16 +211,14 @@ header {
 	border-bottom: 1px solid var(--concrete-path);
 	font-size: 25px;
 	cursor: pointer;
-	grid-template-areas:"goButtonIcon"
-		      "button";
-
 	flex-direction: column;
 	align-items: flex-start;
+    margin-top: 0.2%;
+    margin-right: -0.5%;
 }
 #goButtonIcon {
 	width: 50%;
 	align-self: center;
-	padding-bottom: 0.25rem;
 }
 
 button {
@@ -407,8 +388,8 @@ footer {
 	position: fixed;
 	bottom: 0px;
 	height: 9vh;
-  width: 100vw;
-  z-index: 800;
+    width: 100vw;
+    z-index: 800;
 }
 
 footer .tab {
@@ -543,13 +524,30 @@ footer img {
 	display: none;
 	position: relative;
 }
+
 /* portrait tablets and large phones */
 @media only screen and (min-width: 600px) {
     /* .destination-select, */
      /* footer{
 		display: none !important;
 	} */
-   
+    .pathfinder{
+        height: 11vh;
+    }
+    .pathfinder, .pathfinder ul li, .placeholder{
+        font-size: 2vh;
+    }
+    .path-start-select, .path-end-select{
+        width: 80%;
+    }
+    .label{
+        width: 15%;
+    }
+    .go-btn{
+        width: 13%;
+        height: 100%;
+        margin-top: 0.1%;
+    }
     section{
         margin: 0 auto;
         width: 100%;
@@ -559,10 +557,12 @@ footer img {
 
 @media only screen and (min-width: 769px) {
   /* .destination-select,  */
-  /* footer {
+    .destination-select,
+    .pathfinder,
+    footer {
 		display: none !important;
-	} */
- 
+	} 
+    
 	section {
 		position: absolute;
 		top: 0;
@@ -577,8 +577,8 @@ footer img {
 		width: auto;
 		height: 100%;
 		/* overflow: scroll; */
-    margin: 0 auto;
-	}
+        margin: 0 auto;
+    }
 
 	#svgMap {
 		width: auto;
