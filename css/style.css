@@ -542,9 +542,12 @@ footer img {
 }
 /* portrait tablets and large phones */
 @media only screen and (min-width: 600px) {
-    .destination-select, footer{
-		display: none !important;
-	}
+    #svgMapObj {
+	width: auto;
+	height: 100%;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
    
     section{
         margin: 0 auto;
