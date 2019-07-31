@@ -17,13 +17,13 @@ window.onload = function () {
 
 	/**********LIST OF DOM REFERENCES *********/
 	// Access SVG inside Object by using Object ID and .contentDocument
-	const MAP_SVG = document.querySelector('#svgMapObj').contentDocument;
+	//const MAP_SVG = document.querySelector('#svgMapObj').contentDocument;
 
 	/******* Replaced with above ******/
 	// Target object element holding SVG of map
-	// const MAP_OBJ = document.getElementById('svgMapObj');
+	const MAP_OBJ = document.getElementById('svgMapObj');
 	// Get the SVG document inside the Object tag
-	// const MAP_SVG = MAP_OBJ.contentDocument.getElementById('svgMap');
+	const MAP_SVG = MAP_OBJ.contentDocument.getElementById('svgMap');
 
 
 	// Constants for the drop down
