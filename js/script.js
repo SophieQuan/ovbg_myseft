@@ -32,14 +32,14 @@ window.onload = function () {
 	// Create array of li items in drop down list
 	// const DROP_DOWN_ITEM = document.querySelectorAll('.destination-select li');
 
-  const MAPBOX = document.getElementById('mapBox');
-  const TOP_BAR = document.getElementById('destination-menu'); // Initial top bar menu
-  const PATH_FINDER = document.querySelector('.pathfinder');  // secondary path finder menu to display when top bar is clicked
+	const MAPBOX = document.getElementById('mapBox');
+	const TOP_BAR = document.getElementById('destination-menu'); // Initial top bar menu
+	const PATH_FINDER = document.querySelector('.pathfinder');  // secondary path finder menu to display when top bar is clicked
 	const DROP_DOWN_START = document.querySelector('.path-start-select'); // Select the drop down
-  const DROP_DOWN_ITEM_START = document.querySelectorAll('.path-start-select li'); // Create array of li items in drop down list
-  const DROP_DOWN_END = document.querySelector('.path-end-select'); // Select the drop down
+	const DROP_DOWN_ITEM_START = document.querySelectorAll('.path-start-select li'); // Create array of li items in drop down list
+	const DROP_DOWN_END = document.querySelector('.path-end-select'); // Select the drop down
 	const DROP_DOWN_ITEM_END = document.querySelectorAll('.path-end-select li'); // Create array of li items in drop down list
-  const GO_BTN = document.querySelector('.go-btn'); // go button inside the path finder menu
+	const GO_BTN = document.querySelector('.go-btn'); // go button inside the path finder menu
 
 	// Constants to access the tabs
 	const TABS = document.querySelectorAll('.tab');
@@ -82,7 +82,7 @@ window.onload = function () {
 	let activeColour = '';
 
 	// variable to identify which tab to open
-  let id = 0;
+ 	 let id = 0;
 
 	// variable to store and read the state of the infoPanel (0: closed, 1: minimized, 2: open)
 	let infoPanelState = 0;
@@ -94,10 +94,10 @@ window.onload = function () {
 	let parsed = params.get('id');
 
 	// storing the parsed id in the id variable
-  id = parseInt(parsed);
+ 	 id = parseInt(parsed);
 	// Set this via QR or nav button
 	// *** Hard coded for testing purposes ***
-  let currentLocation = LOCATIONS[id + 1];
+ 	 let currentLocation = LOCATIONS[id + 1];
 
 	// set start position based on tab click
 	let startPosition = parseInt(parsed);
@@ -340,6 +340,9 @@ window.onload = function () {
 
 	// if anywhere in the map is clicked the dropdown will close
 	MAP_SVG.addEventListener('click', function(e) {
+		 //reset the place holder text to where to?
+        	PLACE_HOLDER.innerHTML = "Where to?";
+		
 		DROP_DOWN_ITEM_START.forEach(item => {
 			// toggle the hidden class on each item in the list (unhiding them)
 			if (item.value !== 0) {
@@ -373,10 +376,13 @@ window.onload = function () {
   });
   
   TOP_BAR.addEventListener('click', function() {
-    PATH_FINDER.classList.toggle('hidden');
-    if(parsed) {
-    document.querySelector('.placeholder-start').textContent = currentLocation;
-    }
+	// change the text on place holder
+    	PLACE_HOLDER.innerHTML = "Select Destination";  
+	
+	PATH_FINDER.classList.toggle('hidden');
+	if(parsed) {
+	document.querySelector('.placeholder-start').textContent = currentLocation;
+	}
   });
 
 	// Create event listener on drop down menu
