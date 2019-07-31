@@ -21,9 +21,9 @@ window.onload = function () {
 
 	/******* Replaced with above ******/
 	// Target object element holding SVG of map
-	//const MAP_OBJ = document.getElementById('svgMapObj');
+	// const MAP_OBJ = document.getElementById('svgMapObj');
 	// Get the SVG document inside the Object tag
-	//const MAP_SVG = MAP_OBJ.contentDocument.getElementById('svgMap');
+	// const MAP_SVG = MAP_OBJ.contentDocument.getElementById('svgMap');
 
 
 	// Constants for the drop down
@@ -32,14 +32,14 @@ window.onload = function () {
 	// Create array of li items in drop down list
 	// const DROP_DOWN_ITEM = document.querySelectorAll('.destination-select li');
 
-	const MAPBOX = document.getElementById('mapBox');
-	const TOP_BAR = document.getElementById('destination-menu'); // Initial top bar menu
-	const PATH_FINDER = document.querySelector('.pathfinder');  // secondary path finder menu to display when top bar is clicked
-	const DROP_DOWN_START = document.querySelector('.path-start-select'); // Select the drop down
-	const DROP_DOWN_ITEM_START = document.querySelectorAll('.path-start-select li'); // Create array of li items in drop down list
-	const DROP_DOWN_END = document.querySelector('.path-end-select'); // Select the drop down
-	const DROP_DOWN_ITEM_END = document.querySelectorAll('.path-end-select li'); // Create array of li items in drop down list
-	const GO_BTN = document.querySelector('.go-btn'); // go button inside the path finder menu
+    const MAPBOX = document.getElementById('mapBox');
+    const TOP_BAR = document.getElementById('destination-menu'); // Initial top bar menu
+    const PATH_FINDER = document.querySelector('.pathfinder');  // secondary path finder menu to display when top bar is clicked
+    const DROP_DOWN_START = document.querySelector('.path-start-select'); // Select the drop down
+    const DROP_DOWN_ITEM_START = document.querySelectorAll('.path-start-select li'); // Create array of li items in drop down list
+    const DROP_DOWN_END = document.querySelector('.path-end-select'); // Select the drop down
+    const DROP_DOWN_ITEM_END = document.querySelectorAll('.path-end-select li'); // Create array of li items in drop down list
+    const GO_BTN = document.querySelector('.go-btn'); // go button inside the path finder menu
 
 	// Constants to access the tabs
 	const TABS = document.querySelectorAll('.tab');
@@ -82,7 +82,7 @@ window.onload = function () {
 	let activeColour = '';
 
 	// variable to identify which tab to open
-  	let id = 0;
+    let id = 0;
 
 	// variable to store and read the state of the infoPanel (0: closed, 1: minimized, 2: open)
 	let infoPanelState = 0;
@@ -94,10 +94,10 @@ window.onload = function () {
 	let parsed = params.get('id');
 
 	// storing the parsed id in the id variable
-	id = parseInt(parsed);
+    id = parseInt(parsed);
 	// Set this via QR or nav button
 	// *** Hard coded for testing purposes ***
-	  let currentLocation = LOCATIONS[id + 1];
+    let currentLocation = LOCATIONS[id + 1];
 
 	// set start position based on tab click
 	let startPosition = parseInt(parsed);
@@ -340,9 +340,8 @@ window.onload = function () {
 
 	// if anywhere in the map is clicked the dropdown will close
 	MAP_SVG.addEventListener('click', function(e) {
-        //reset the place holder text to where to?
+        //reset the text on top bar
         PLACE_HOLDER.innerHTML = "Where to?";
-        
 		DROP_DOWN_ITEM_START.forEach(item => {
 			// toggle the hidden class on each item in the list (unhiding them)
 			if (item.value !== 0) {
@@ -358,56 +357,53 @@ window.onload = function () {
       document.querySelector('.placeholder-start').textContent = LOCATIONS[item.value];
       currentLocation = LOCATIONS[item.value];
       // Reset destination display text 
-      document.querySelector('.placeholder-end').textContent = 'Where to?'
-      
+      document.querySelector('.placeholder-end').textContent = 'Select Destination?'
             
     });
 
-   DROP_DOWN_ITEM_END.forEach(item => {
+    DROP_DOWN_ITEM_END.forEach(item => {
 			// toggle the hidden class on each item in the list (unhiding them)
 			if (item.value !== 0) {
 				item.classList.add('hidden');
 			} else {
 				item.classList.remove('hidden');
 			}
-	      // Reset dropdown text value to select destination
-	    document.querySelector('.endPoint').classList.remove('hidden');
+      // Reset dropdown text value to select destination
+    document.querySelector('.endPoint').classList.remove('hidden');
     });
     
   });
   
-	TOP_BAR.addEventListener('click', function() {
-		// change the text on place holder
-		PLACE_HOLDER.innerHTML = "Select Destination";
-
-		PATH_FINDER.classList.toggle('hidden');
-
-		if(parsed) {
-			document.querySelector('.placeholder-start').textContent = currentLocation;
-		}
-	});
+  TOP_BAR.addEventListener('click', function() {
+    //top bar will change to select destionation on click
+    PLACE_HOLDER.innerHTML = "Select Destination";
+    PATH_FINDER.classList.toggle('hidden');
+    if(parsed) {
+    document.querySelector('.placeholder-start').textContent = currentLocation;
+    }
+  });
 
 	// Create event listener on drop down menu
 	DROP_DOWN_START.addEventListener('click', function() {
-		// Hide the endpoint select
-		document.querySelector('.endPoint').classList.toggle('hidden');
+    // Hide the endpoint select
+    document.querySelector('.endPoint').classList.toggle('hidden');
 		// Loop through the elements in the drop down and add event listeners to them
 		DROP_DOWN_ITEM_START.forEach(item => {
 			// toggle the hidden class on each item in the list (unhiding them)
 			item.classList.toggle('hidden');
-			currentLocation = LOCATIONS[item.value];      
+      currentLocation = LOCATIONS[item.value];      
 			// Add the event listener to the item
 			item.addEventListener('click', function() {
-				// will set destination location based item in dropdown being selected
+        // will set destination location based item in dropdown being selected
 				if (item.value !== 0) {
-				  id = item.value;
-				}
-
-			// Upon clicking an item in the list set the displayed text to the selected location name
-			document.querySelector('.placeholder-start').textContent = LOCATIONS[item.value];
+          id = item.value;
+        }
+        
+				// Upon clicking an item in the list set the displayed text to the selected location name
+				document.querySelector('.placeholder-start').textContent = LOCATIONS[item.value];
 			});
 		});
-	});
+  });
 
   	// Create event listener on drop down menu
 	DROP_DOWN_END.addEventListener('click', function() {
@@ -420,25 +416,25 @@ window.onload = function () {
 			item.addEventListener('click', function () {
 				// will set destination location based item in drop down being selected
 				if (item.value !== 0) {
-					destination = item.value - 1
-				}
+          destination = item.value - 1
+        }
 				// Upon clicking an item in the list set the displayed text to the selected location name
-				document.querySelector('.placeholder-end').textContent = LOCATIONS[item.value];
+        document.querySelector('.placeholder-end').textContent = LOCATIONS[item.value];
 			});
 		});
- 	 });
+  });
 
-	// Handle Go button event, will execute zoom function upon click
-	GO_BTN.addEventListener('click', function() {
-		// Call zoom function based on current destination selection
-		pathZoomIn(destination);
+  // Handle Go button event, will execute zoom function upon click
+  GO_BTN.addEventListener('click', function() {
+    // Call zoom function based on current destination selection
+    pathZoomIn(destination);
 
-		// Drawpath function call here **
-		// DRAW_PATH(parkFeature, id, i);
+      // Drawpath function call here **
+      // DRAW_PATH(parkFeature, id, i);
 
-		// Hide with the path finder menu
-		PATH_FINDER.classList.add('hidden');
-	});
+    // Hide with the path finder menu
+    PATH_FINDER.classList.add('hidden');
+  });
 
 
 
@@ -480,20 +476,20 @@ window.onload = function () {
 		TABS[i].onclick = function () {
 			// setting the id and the content based on the id
 			id = i;
-			//update current location value based on tab clicked
-			currentLocation = LOCATIONS[parseInt(i) + 1];
+      //update current location value based on tab clicked
+      currentLocation = LOCATIONS[parseInt(i) + 1];
 			// closing the info panel before changing content
 			closeInfoPanel();
 			// using the setTimeout to delay and sync the loading of content with the animation
 			// setting the content in the info panel
 			setTimeout(setContent, 350);
 			// opening the panel with new content
-			openInfoPanel();
-			//update starting point text to respresent new starting location
-			document.querySelector('.placeholder-start').textContent = currentLocation;
-			// hide the path finder menu
-			PATH_FINDER.classList.add('hidden');
-    		};
+      openInfoPanel();
+      //update starting point text to respresent new starting location
+      document.querySelector('.placeholder-start').textContent = currentLocation;
+      // hide the path finder menu
+      PATH_FINDER.classList.add('hidden');
+    };
 	}
 
 	TITLE_BAR.onclick = function () {
