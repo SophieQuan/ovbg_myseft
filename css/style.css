@@ -542,10 +542,7 @@ footer img {
 }
 /* portrait tablets and large phones */
 @media only screen and (min-width: 600px) {
-    .destination-select, footer{
-		display: none !important;
-	}
-   
+    
     section{
         margin: 0 auto;
         width: 100%;
