@@ -76,15 +76,32 @@ header {
 	border-radius: 3vh;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
-
+/*SPLASH SCREEN*/
+#splash{
+	background-image: url(../images/welcome_bg.jpg);
+	background-repeat: no-repeat;
+	position: fixed;
+	overflow: none;
+	background-size: cover;
+}
+#slashLogo{
+	width: 70%;
+	height: auto;
+	position: absolute;
+	top: 0;
+	bottom:0;
+	left: 0;
+	right:0;
+	margin: auto;
+}
 /* Dropdown and SVG styles */
 
 #svgMapObj {
 	width: auto;
 	height: 100%;
 	overflow: scroll;
-	-webkit-overflow-scrolling: touch;
-	z-index: -1;
+    -webkit-overflow-scrolling: touch;
+    z-index: 200;
 }
 
 #svgMap {
@@ -99,7 +116,7 @@ header {
 	grid-area: switchToggle;
 	margin-left: 1vw;
 	position: relative;
-    	top: 0.5vh
+    top: 0.5vh
 }
 
 .pathfinder {
@@ -116,8 +133,8 @@ header {
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	border: 1px solid var(--concrete-path);
-	font-family: "ButtonFont";
-	z-index: 100000;
+    font-family: "ButtonFont";
+    z-index: 800;
 }
 
 .pathfinder ul li {
@@ -128,8 +145,7 @@ header {
      
 }
 .pathfinder ul li:hover, .pathfinder ul li:focus {
-	background-color: #e7e1c6;
-	visibility: visible;
+	  background-color: #e7e1c6;
 }
 .path-start-select, .path-end-select {
 	width: 85%;
@@ -180,7 +196,6 @@ header {
 	text-align: left;
 	height: 5vh;
 	width: 100%;
-	
     
 }
 
@@ -196,7 +211,6 @@ header {
 
 .endPoint {
 	grid-area: end;
-    
 }
 
 .go-btn {
@@ -241,7 +255,7 @@ button {
 	background: var(--paths);
 	border-radius: 1vh;
 	border: 1px solid var(--concrete-path);
-	z-index: 9000;
+	z-index: 900;
 	position: absolute;
 	top: 2.5%;
 	left: 2.6%;
@@ -297,7 +311,8 @@ section {
 	background: #F7F2DB;
 	border-top-left-radius: 2vh;
 	border-top-right-radius: 2vh;
-	box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 700;
 }
 
 #titleBar {
@@ -392,7 +407,8 @@ footer {
 	position: fixed;
 	bottom: 0px;
 	height: 9vh;
-	width: 100vw;
+  width: 100vw;
+  z-index: 800;
 }
 
 footer .tab {
@@ -406,7 +422,7 @@ footer .tab {
 	border-bottom: none;
 	border-top-left-radius: 1.5vh;
 	border-top-right-radius: 1.5vh;
-	box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15);
 }
 
 footer .tab:hover {
@@ -529,28 +545,23 @@ footer img {
 }
 /* portrait tablets and large phones */
 @media only screen and (min-width: 600px) {
-    #svgMapObj {
-	width: auto;
-	height: 100%;
-	overflow: scroll;
-	-webkit-overflow-scrolling: touch;
-    }
+    /* .destination-select, */
+     /* footer{
+		display: none !important;
+	} */
    
     section{
         margin: 0 auto;
         width: 100%;
     }
-	
-    .pathfinder, .placeholder, .label, button{
-	 font-size: 24px;
-    }
 }
 /* STYLES FOR LARGE DISPLAYS - landscape tablets, destop*/
 
 @media only screen and (min-width: 769px) {
-	.destination-select, footer {
+  /* .destination-select,  */
+  /* footer {
 		display: none !important;
-	}
+	} */
  
 	section {
 		position: absolute;
@@ -566,7 +577,7 @@ footer img {
 		width: auto;
 		height: 100%;
 		/* overflow: scroll; */
-        margin: 0 auto;
+    margin: 0 auto;
 	}
 
 	#svgMap {
