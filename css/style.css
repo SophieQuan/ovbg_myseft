@@ -109,12 +109,13 @@ header {
 }
 
 .switchToggle{
-	width: 65%;
+	width: 55%;
 	height: auto;
 	align-self: center;
 	grid-area: switchToggle;
 	margin-left: 1vw;
 	position: relative;
+    top: 0.5vh
 }
 
 .pathfinder {
@@ -184,7 +185,7 @@ header {
 	margin-top: 1vh;
 }
 
-.label {
+.pathfinder .label {
 	width: 12vw;
 	font-size: 20px;
 	position: absolute;
@@ -198,7 +199,7 @@ header {
 
 .label-start {
 	grid-area: startlabel;
-	top: 2vh;
+	top: 2.7vh;
 }
 
 .label-end {
@@ -217,12 +218,12 @@ header {
 	align-content: center;
 	text-align: center;    
 	grid-area: go-btn;
-	width: 100%;
-	height: 100%;
-	height: auto;
+	width: 102%;
+    height: 100.5%;
 	background-color: var(--go-button);
-	border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 10px;
 	border-left: 1px solid var(--concrete-path);
+	border-right: 1px solid var(--concrete-path);
 	border-bottom: 1px solid var(--concrete-path);
 	font-size: 25px;
 	cursor: pointer;
@@ -231,13 +232,11 @@ header {
 
 	flex-direction: column;
 	align-items: flex-start;
-	top: 1vh;
-  
 }
 #goButtonIcon {
 	width: 50%;
 	align-self: center;
-	padding-bottom: 0.25rem
+	padding-bottom: 0.25rem;
 }
 
 button {
@@ -468,7 +467,7 @@ footer img {
 	max-width: 75%;
 }
 
-h3 {
+#contentTextBox h3 {
 	/*display: flex;
 	flex-direction: row;*/
 	padding: 10px 20px;
