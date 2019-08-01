@@ -395,7 +395,7 @@ footer .tab {
 	border-bottom: none;
 	border-top-left-radius: 1.5vh;
 	border-top-right-radius: 1.5vh;
-  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15);
 }
 
 footer .tab:hover {
@@ -518,10 +518,10 @@ footer img {
 }
 /* portrait tablets and large phones */
 @media only screen and (min-width: 600px) {
-    /* .destination-select, */
-     /* footer{
+    .destination-select,
+    footer{
 		display: none !important;
-	} */
+	}
    
     section{
         margin: 0 auto;
