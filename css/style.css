@@ -528,9 +528,7 @@ footer img {
     }
     .pathfinder{
         height: 15vh;
-    }
-    #placeholder{
-        font-size: 2.7vh;
+	font-size: 2.7vh; 
     }
     .path-start-select, .path-end-select{
         width: 80%;
