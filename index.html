@@ -19,41 +19,41 @@
           <h2 id="placeholder">Where to?</h2>
         </div>
     </div>
-    
+     
     <div class="pathfinder hidden">
-      <div class="input">
+    <div class="input"> 
       <div class="startPoint">
         <div class="fromCircle"></div>
         <h3 class="label label-start">From</h3>
         <ul class="path-start-select">
-          <li value="0" class="menuItem placeholder-start">Your Location</li>
-          <li value="1" class="menuItem hidden">Bike Path</li>
-          <li value="2" class="menuItem hidden">Peony Garden</li>
-          <li value="3" class="menuItem hidden">Waterfall Garden</li>
-          <li value="4" class="menuItem hidden">Bridge</li>
-          <li value="5" class="menuItem hidden">Daylily Collection</li>
-          <li value="6" class="menuItem hidden">Memory Garden</li>
+          <li class="menuItem placeholder-start">Your Location</li>
+          <li class="menuItem hidden">Bike Trail</li>
+          <li class="menuItem hidden">Peony Garden</li>
+          <li class="menuItem hidden">Waterfall Garden</li>
+          <li class="menuItem hidden">Rotary Bridge</li>
+          <li class="menuItem hidden">Daylily Collection</li>
+          <li class="menuItem hidden">Memory Garden</li>
         </ul>
       </div>
-      
       <div class="endPoint">
         <div class="toCircle"></div>
         <h3 class="label label-end">To</h3>
         <ul class="path-end-select">
-          <li value="0" class="menuItem placeholder-end">Where to?</li>
-          <li value="1" class="menuItem hidden">Bike Path</li>
-          <li value="2" class="menuItem hidden">Peony Garden</li>
-          <li value="3" class="menuItem hidden">Waterfall Garden</li>
-          <li value="4" class="menuItem hidden">Bridge</li>
-          <li value="5" class="menuItem hidden">Daylily Collection</li>
-          <li value="6" class="menuItem hidden">Memory Garden</li>
+          <li class="menuItem placeholder-end">Where to?</li>
+          <li class="menuItem hidden">Bike Trail</li>
+          <li class="menuItem hidden">Peony Garden</li>
+          <li class="menuItem hidden">Waterfall Garden</li>
+          <li class="menuItem hidden">Rotary Bridge</li>
+          <li class="menuItem hidden">Daylily Collection</li>
+          <li class="menuItem hidden">Memory Garden</li>
         </ul>
       </div>
-      </div>
+    </div>   
       <div class="go-btn">
         <img id="goButtonIcon" src= "images/go_button_icon.svg"alt="Go Button">
         <button>Go</button>
       </div>
+        
     </div>
 
 		<section id="mapBox">
@@ -61,7 +61,7 @@
 					data="./images/park_map.svg"
 					type="image/svg+xml"
 					viewBox="0 0 1920 1080">
-				Your browser doesn't support SVG format
+				Your browser doesn't support SVG
 			</object>
 
 			<div id="infoPanel">
@@ -87,9 +87,33 @@
 						<img class="galleryImage"
 							 src="images/temp_image.jpg" >
 					</div>
-					
+					<!--gallery new update-->
+					<div id="modalContent">
+						<div id="expandedImg">
+							<img class="bigImage"
+								 src="images/temp_image.jpg" >
+							<img class="bigImage"
+								 src="images/temp_image.jpg" >
+							<img class="bigImage"
+								 src="images/temp_image.jpg" >
+							<img class="bigImage"
+								 src="images/temp_image.jpg" >
+						</div>
+						<div id="thumbnail">
+							<img class="smImage"
+								 src="images/temp_image.jpg" >
+							<img class="smImage"
+								 src="images/temp_image.jpg" >
+							<img class="smImage"
+								 src="images/temp_image.jpg" >
+							<img class="smImage"
+								 src="images/temp_image.jpg" >
+
+						</div>
+					</div>
+
 					<div id="contentTextBox">
-							<h4>You are here!</h4>
+							<h3>You are here!</h3>
 						<div id="about"
 							 class="content">
 							<p>
