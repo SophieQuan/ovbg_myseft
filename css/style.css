@@ -143,7 +143,7 @@ header {
 	border: 1px solid var(--concrete-path);
 	font-family: "ButtonFont";
 	z-index: 800;
-	font-size: 2.3vh;
+	font-size: 2.5vh;
     
 }
 .pathfinder ul{
