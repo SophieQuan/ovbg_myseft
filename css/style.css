@@ -65,16 +65,16 @@ main {
 }
 
 header {
-	position: fixed;
-	top: 8vh;
-	left: 12.5vw;
-	transform: translateX(-3.5vw);
-	height: 7vh;
-	width: 80vw;
-	background: #F7F2DB;
-	border: 2px solid #707070;
-	border-radius: 3vh;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 8vh;
+    left: 12.5vw;
+    transform: translateX(-3.5vw);
+    height: 7vh;
+    width: 80vw;
+    background: #F7F2DB;
+    border: 2px solid #707070;
+    border-radius: 3vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
 /*SPLASH SCREEN*/
 #splash{
@@ -132,7 +132,7 @@ header {
 }
 .pathfinder {
 	width: 90%;
-	height: 14%;
+	height: 17%;
 	background-color: var(--paths);
 	display: flex;
 	position: absolute;
@@ -156,7 +156,7 @@ header {
     
 }
 .pathfinder ul li:hover, .pathfinder ul li:focus {
-	  background-color: #e7e1c6;
+	background-color: #e7e1c6;
 }
 .path-start-select, .path-end-select {
 	border-radius: 1vh;
@@ -168,7 +168,7 @@ header {
 	height: 100%;
 }
 .path-start-select{
-    margin-bottom: 1vh;
+	margin-bottom: 1vh;
 }
 .placeholder-end{
 	color: var(--concrete-path);
@@ -176,27 +176,25 @@ header {
 }
 
 .input{
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    margin: 1.5% 2% 0.5% 0.5%;
-        
-    /*margin: auto;*/
+	width: 100%;
+	height: auto;
+	flex-direction: column;
+	margin: 1.5% 2% 0.5% 0.5%;
 }
 .endPoint, .startPoint {
-    width: 100%;
+	width: 100%;
 	display: flex;
 	flex-direction:row;
-    align-items: baseline;
-    padding-right: 2vw;
+	align-items: baseline;
+	padding-right: 2vw;
 }
 
 .startPoint {
 	margin-top: 1vh;
 }
 .label{
-    display: flex;
-    width: 20%;
+	display: flex;
+	width: 20%;
 }
 .go-btn {
 	display: flex;
@@ -204,7 +202,7 @@ header {
 	align-content: center;
 	text-align: center;
 	width:15%;
-    height: 100%;
+	height: 100%;
 	background-color: var(--go-button);
 	border-bottom-right-radius: 10px;
 	border-left: 1px solid var(--concrete-path);
@@ -242,12 +240,9 @@ button {
 }
 
 .destination-select  {
-	/*display: grid;
-	grid-template-areas: "logo placeholder";
-	grid-template-columns: 20% 80%;*/
 	font-size: 15px;
 	font-family: "ButtonFont";
-   
+   	cursor: pointer;
 }
 
 .destination-select h2 {
@@ -290,8 +285,8 @@ section {
 	background: #F7F2DB;
 	border-top-left-radius: 2vh;
 	border-top-right-radius: 2vh;
-  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
-  z-index: 700;
+	box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+	z-index: 700;
 }
 
 #titleBar {
@@ -450,8 +445,6 @@ footer img {
 }
 
 #contentTextBox h3 {
-	/*display: flex;
-	flex-direction: row;*/
 	padding: 10px 20px;
 	margin-bottom: 2vh;
 	font-size: 3vh;
@@ -464,10 +457,6 @@ footer img {
 	 text-align: center;
 	border-radius: 1vh;
 }
-
-/*label h4 {
-	margin-left: 1vw;
-}*/
 
 #tabIcon {
 	width: auto;
