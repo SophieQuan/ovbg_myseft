@@ -132,7 +132,7 @@ header {
 }
 .pathfinder {
 	width: 90%;
-	height: 15.5vh;
+	height: 15vh;
 	background-color: var(--paths);
 	display: flex;
 	position: absolute;
