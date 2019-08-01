@@ -527,6 +527,29 @@ footer img {
         margin: 0 auto;
         width: 100%;
     }
+     .fromCircle, .toCircle{
+        width: 10px;
+        height: 10px;
+    }
+    .pathfinder{
+        height: 15vh;
+    }
+    #placeholder{
+        font-size: 2.7vh;
+    }
+    .pathfinder, .pathfinder ul li{
+        font-size: 2vh;
+    }
+    .path-start-select, .path-end-select{
+        width: 80%;
+    }
+    .label{
+        width: 15%;
+    }
+    .go-btn{
+        width: 13%;
+        height: 100%;
+    }
 }
 /* STYLES FOR LARGE DISPLAYS - landscape tablets, destop*/
 
