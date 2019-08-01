@@ -162,7 +162,7 @@ header {
 	border-radius: 1vh;
 	border: 1px solid var(--concrete-path);
 	background-color: var(--paths);
-	padding: 0 1vh;
+	padding: 2vh 1vw;
 	width: 75%;
 	height: 100%;
 }
