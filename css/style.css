@@ -458,64 +458,6 @@ footer img {
 	 text-align: center;
 	border-radius: 1vh;
 }
-
-/*label h4 {
-	margin-left: 1vw;
-}*/
-
-#tabIcon {
-	width: auto;
-	height: 2.5vh;
-	margin-right: 1vw;
-}
-
-/*gallery Images style--------------------*/
-
-#modalContent {
-	position: relative;
-	border-radius: 1vh;
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-.bigImage {
-	width: 80%;
-	height: auto;
-	position: absolute;
-}
-
-.smImage {
-	width: 17.7%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	margin-left: 82%;
-	margin-bottom: 2%;
-}
-.smImage:active {
-	border: 1px solid #f7f2db;
-}
-.bigImage,
-.smImage {
-	border-radius: 1vh;
-}
-
-#expandedImg,
-#thumbnail {
-	float: left;
-}
-
-#expandedImg {
-	width: 80%;
-	display: none;
-}
-
-#thumbnail {
-	width: 100%;
-	display: none;
-	position: relative;
-}
 /* portrait tablets and large phones */
 @media only screen and (min-width: 600px) {
       section{
