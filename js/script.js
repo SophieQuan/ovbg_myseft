@@ -558,8 +558,6 @@ window.onload = function () {
 			TABS[i].style.backgroundColor = '';
 			TITLE_BAR.style.backgroundColor = '#383838';
 		}
-		// reset image gallery
-		closeImgGallery();
 	}
 
 	// function to set all the content inside the info panel
@@ -814,69 +812,4 @@ window.onload = function () {
 		}
 	});
 
-	/* EXPANDING THE IMAGE GALLERY */
-
-	// function expand the image gallery
-	function openModal() {
-		contentImg.style.display = 'none';
-
-		for (let i in BIG_IMAGES) {
-			BIG_IMAGES[i].src = parkFeature[id].bigImages[i];
-		}
-		for (let i in SMALL_IMAGES) {
-			SMALL_IMAGES[i].src = parkFeature[id].bigImages[i];
-		}
-
-		expandedImg.style.display = 'block';
-		thumbnail.style.display = 'block';
-
-		// animate the image content once expanded
-		TweenMax.from('#modalContent', 1, {
-			opacity: 0,
-		});
-	}
-	contentImg.addEventListener('click', openModal);
-
-
-	//set the slide index to loop through thumbnail
-	let slideIndex = 1;
-	showSlides(slideIndex);
-
-	// function identify the current image - n is the number of current image slide
-	function currentSlide(n) {
-		showSlides((slideIndex = n));
-	}
-
-	// function show the image slide
-	function showSlides(n) {
-		let i;
-		let slides = document.getElementsByClassName('bigImage');
-		let thumbnails = document.getElementsByClassName('smImage');
-		if (n > slides.length) {
-			slideIndex = 1;
-		}
-		if (n < 1) {
-			slideIndex = slides.length;
-		}
-		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = 'none';
-		}
-		for (i = 0; i < thumbnails.length; i++) {
-			thumbnails[i].className = thumbnails[i].className.replace(' active', '');
-		}
-
-		slides[slideIndex - 1].style.display = 'block';
-		// load the current image from the thumbnail
-		thumbnails[slideIndex - 1].className += ' active';
-	}
-
-	// function to reset image gallery
-	function closeImgGallery() {
-		expandedImg.style.display = 'none';
-		thumbnail.style.display = 'none';
-		contentImg.style.display = 'block';
-	}
-
-	// END IMAGE GALLERY SCRIPT ----------
-	// }
 };
