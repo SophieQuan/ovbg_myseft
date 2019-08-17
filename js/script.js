@@ -328,22 +328,20 @@
 				opacity: 1,
                 y: 0
 			});
-            
-			TweenMax.to("#splash", 0.5, {
+            TweenMax.to("#splash", 1 ,{
+                delay: 1.5,
+                opacity: 0,
+                ease: Sine.easeInOut,
+            });
+			TweenMax.to("#splashLogo", 0.5, {
 				delay: 2,
 				ease: Sine.easeInOut,
+                scale: 0,
                	onComplete: function () {
                     splashScreen.style.display = "none";
                     appScreen.style.display = "";
 					appScreen.style.opacity = "1";
-                    TweenMax.fromTo("#app", 0.5, {
-                        opacity: 0,
-                        ease: Sine.easeInOut,
-                        x: "100%"
-                    },{
-                        x: "0%",
-                        opacity: 1
-                    });
+                    
                 }
 			});
 		}
