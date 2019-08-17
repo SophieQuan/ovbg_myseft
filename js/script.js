@@ -299,6 +299,7 @@
 		
 		function showSplashScreen() {
 			const appScreen = document.querySelector('#app');
+			const splashScreen = document.querySelector('#splash');
 		
 			//hide the app screen
 			appScreen.style.display = "none";
@@ -318,37 +319,32 @@
 			});
 			
 			TweenMax.fromTo("#welcomeText p",1 ,{
-				
-				ease: Sine.easeIn,
+				ease: Sine.easeInOut,
 				opacity: 0,
-				scale: 0
+                y: "-5vh"
 			},{
 				delay: 0.5,
-				ease: Sine.easeOut,
-				opacity: 1,
-				scale:1
-			});
-
-			TweenMax.to("#welcomeText p", 0.5, {
-				delay: 3.5,
-				opacity:0,
-				scale: 1,
-				ease: Sine.easeOut
-			});
-			TweenMax.to("#splashLogo", 0.5, {
-				delay: 4,
-				scale: 0,
-				ease: Sine.easeOut
-			});
-
-			TweenMax.to("#welcomeBg", 0.3, {
-				delay: 4,
-				opacity:0,
 				ease: Sine.easeInOut,
-				onComplete: function () {
-					appScreen.style.display = "";
+				opacity: 1,
+                y: 0
+			});
+            
+			TweenMax.to("#splash", 0.5, {
+				delay: 2,
+				ease: Sine.easeInOut,
+               	onComplete: function () {
+                    splashScreen.style.display = "none";
+                    appScreen.style.display = "";
 					appScreen.style.opacity = "1";
-				}
+                    TweenMax.fromTo("#app", 0.5, {
+                        opacity: 0,
+                        ease: Sine.easeInOut,
+                        x: "100%"
+                    },{
+                        x: "0%",
+                        opacity: 1
+                    });
+                }
 			});
 		}
 
