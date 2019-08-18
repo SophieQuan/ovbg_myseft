@@ -329,12 +329,12 @@
                 y: 0
 			});
             TweenMax.to("#splash", 1 ,{
-                delay: 1.5,
+                delay: 2.5,
                 opacity: 0,
                 ease: Sine.easeInOut,
             });
 			TweenMax.to("#splashLogo", 0.5, {
-				delay: 2,
+				delay: 2.5,
 				ease: Sine.easeInOut,
                 scale: 0,
                	onComplete: function () {
